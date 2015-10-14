@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "CalliTab",
+  "short_name":"Calli-Tab",
+
+  "description": "All the basic features combined into one app.Few features include news,time,weather updates and a todo functionality",
+  "version": "1.5",
+  "author":"Melvin Philips Y.N.W.A",  
+
+  "permissions": [
+    "management","bookmarks","geolocation"
+  ],
+  "icons":{
+    "16":"c-16.png",
+    "48":"c-48.png",
+    "128":"c-128.ico"
+  },
+
+  "chrome_url_overrides" : {
+    "newtab": "allinone.html"
+  }
+    
+}

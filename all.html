@@ -1,0 +1,109 @@
+<div class="wrapper" style='height:100%; overflow: hidden;'>
+	<!--
+		<div id="date and greeting" class="pull-right panel" style="padding:20px; font-weight:bold">
+
+			<div class="time">{{timedate}}</div><div class="greeting">{{greeting}}</div>
+
+			<input type="text" class="form-control" />
+		</div> -->
+	<button id="popoverweather" class='btn btn-primary pull-right' style="margin:20px;">{{temp}}&#x2103;<img ng-src={{icon}}></img></button>
+	<div id="weather" class="nav-stacked col-md-3 pull-right" style="display:none; clear:right; padding:5px;">
+		<div class="list-group" style="font-weight:bold;">
+			<div class="list-group-item "><span class="w">Place:</span>{{place}}</div>
+			<div class="list-group-item "><span class="w">Description:</span>{{description}}</div>
+			<div class="list-group-item "><span class="w">Sunrise Time:</span>{{sunrise}}</div>
+			<div class="list-group-item "><span class="w">Sunset Time:</span>{{sunset}}</div>
+			<div class="list-group-item "><span class="w">Wind Speed:</span>{{wind}}mps</div>
+			<div class="list-group-item "><span class="w">Pressure:</span>{{pressure}} hPa</div>
+
+		</div>
+	</div>
+	{{position}}
+	   <div id="table-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 >Already exists</h3>
+                    </div>
+                    <div class="modal-body">
+                    The todo item you are trying to add already exists.
+                    </div>
+                </div>
+              </div>
+          </div>
+<div class="container " >
+		<div id="todowrapper"><button id="popover" class='btn btn-primary navbar-fixed-top'>Never Forget Anything :To-Do List</button>
+			<div id="todo" class='list-group col-lg-3' style="position:absolute;;padding-top:60px;" >
+				<div class="limit">
+					<form class='list-group-item' ng-submit="addTodo()">
+						<div class="col-lg-8">
+							<input type="text" class="form-control" ng-model="todotext"  placeholder="Enter your To-Dos'"/>
+						</div>
+						<input type="submit" class="btn btn-primary"/>
+					</form>
+					<div class="list-group-item " ng-show='todotext'>
+						<input type='checkbox' disabled='true'/>
+						<input type='text' disabled='true' class='todo' style="width:300px;" placeholder='{{todotext}}'/>
+					</div>
+				
+					
+					
+					<div  class='list-group-item clearfix' ng-repeat='todo in todos |filter:statusFilter track by $index' >
+						<span>
+						<input  class='toggle' type="checkbox" ng-model="todo.done"/>
+						<span>
+						<label id="sp"contenteditable="true"  style="width:180px;">{{todo.text}}</label>
+						<span class='pull-right'>
+							<a href="" ng-click="moveupdown($index-1)"><span class='glyphicon glyphicon-arrow-up'></span></a>
+							<a href="" ng-click="moveupdown($index)"><span class='glyphicon glyphicon-arrow-down'></span></a>
+						
+							<a href="" ng-click="removeTodo(todo)"><span class='glyphicon glyphicon-remove-circle'></span></a>
+						</span>
+					</div>
+				
+				</div>
+					<footer id="footer" ng-show="todos.length" style"width:500px;">
+								<ul class="nav nav-tabs nav-justified btn-primary red" role="tablist">
+									<li>
+										<a class="geyish" ng-class="{selected: status == ''} " href="#/">All</a>
+									</li>
+									<li>
+										<a class="geyish"  ng-class="{selected: status == 'active'}" href="#/active">Incomplete</a>
+									</li>
+									<li>
+										<a class="geyish"  ng-class="{selected: status == 'completed'}" href="#/completed">Complete</a>
+									</li>
+								</ul>
+					</footer>
+			</div></div>
+	<div class='center'>
+	<div id="wish"  style="font-weight:bold">
+
+			<div class="time"><h1>{{time}}</h1><!-- <h5>{{period}}</h5>< --></div>
+			<div class="date"><h3>{{date}}</h3></div>
+			<div class="greeting">{{greeting}}</div>
+				<div ng-hide='nameofperson' >
+				<input type="text" class="form-control"  ng-model='nop' placeholder="Please Enter your name" />
+				<button  class="btn btn-primary"  ng-click="addname();" style="margin-top:10px">Add Your Name
+			</button>
+			</div>
+			<div class="nameofperson" ng-show='nameofperson'><h2>{{nameofperson}}<h2></div></div>
+		</div>
+	</div>
+	<form action="allinone.html#/apps" class="navbar-fixed-bottom" style="margin-bottom:80px;">
+    <input type="submit" class="btn btn-primary capp" value="Chrome apps">
+</form>
+<form action="allinone.html#/bookmarks" class="navbar-fixed-bottom" style="margin-bottom: 80px;position:absolute;left:88%;">
+    <input type="submit" class="btn btn-primary capp" value="Bookmarks">
+</form>
+
+<!-- <div id="wordtobespun" class="allword mega"><div class="panel col-sm-3 pull-right word" ng-show="word" ><div class="face front">Word Of The Day:{{word}}</div><div class="face back">Definition:{{def}}</div></div></div> -->
+</br>
+	<div id="news" class="navbar-fixed-bottom" align="center">
+		<ul id="js-news" class="js-hidden">
+		    <li class="news-item"></li>
+		</ul>
+	</div>
+</div>
+</div>
