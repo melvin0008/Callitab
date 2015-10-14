@@ -232,7 +232,9 @@ function date_time()
 
 			       	var tempdesc=(receiveddata.weather[0].description);
 			       	$scope.description=tempdesc.charAt(0).toUpperCase()+tempdesc.slice(1);
-			       	$scope.temp=Math.round((receiveddata.main.temp-273.15)* 100) / 100;
+			       	var temp=Math.round((receiveddata.main.temp-273.15));
+			       	$scope.temp=temp;
+			       	$scope.far=Math.round(temp*1.8+21);
 			       	var sunrise=receiveddata.sys.sunrise;
 			       	var date1=new Date(sunrise*1000);
 			       	$scope.sunrise=format_date(date1);
