@@ -28,7 +28,7 @@ chromeext.config( [
     '$compileProvider',
     function( $compileProvider )
     {
-        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|https):/);
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(http?|ftp|mailto|file|https|https:\/\/rss.cnn.com\/rss\/cnn_topstories.rss):/);
         // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
     }
 ]);

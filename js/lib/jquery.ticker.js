@@ -189,10 +189,10 @@
 				if (settings.contentLoaded == false) {
 					// construct content
 					if (opts.ajaxFeed) {
-						if (opts.feedType == 'xml') {							
+						if (opts.feedType == 'xml') {						
 							$.ajax({
 								url: opts.feedUrl,
-								cache: false,
+								cache: true,
 								dataType: opts.feedType,
 								async: true,
 								success: function(data){
@@ -424,7 +424,7 @@
 	$.fn.ticker.defaults = {
 		speed: 0.20,			
 		ajaxFeed: false,
-		feedUrl: '',
+		feedUrl: 'http://rss.cnn.com/rss/cnn_topstories.rss',
 		feedType: 'xml',
 		displayType: 'reveal',
 		htmlFeed: true,

@@ -122,7 +122,7 @@ $(document).ready(function() {
 	$('#js-news').ticker({
 		htmlFeed: false,
 		ajaxFeed: true,
-		feedUrl: 'http://api.feedzilla.com/v1/categories/26/articles.rss?title_only=1',
+		feedUrl: 'http://rss.cnn.com/rss/cnn_topstories.rss',
 		feedType: 'xml'
 	});
 
