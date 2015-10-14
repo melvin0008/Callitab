@@ -1,5 +1,4 @@
-﻿﻿var chromeext = angular.module('GoogleChromeExt', ['ngRoute','ui.bootstrap','LocalStorageModule']);
-
+﻿﻿var chromeext = angular.module('GoogleChromeExt', ['ngRoute','ui.bootstrap','LocalStorageModule','dndLists']);
 
 chromeext.config(function ($routeProvider) {
 		'use strict';

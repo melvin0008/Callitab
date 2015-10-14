@@ -142,21 +142,7 @@ $scope.removeTodo=function(todo)
 	}
 	//	savelocal();
 };
-$scope.moveupdown=function(pos)
-{
-	if(pos===-1)
-	{
-		return;
-	}
-	if(pos===$scope.todos.length-1)
-	{
-		return;
-	}
-	var todo=$scope.todos[pos];
-	$scope.todos.splice(pos+2,0,todo);
-	$scope.todos.splice(pos,1);
-	savelocal(); 
-};
+
 function savelocal()
 {
 	localStorageService.set('currenttodo',$scope.todos);

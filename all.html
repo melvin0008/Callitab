@@ -46,36 +46,31 @@
 						<input type='checkbox' disabled='true'/>
 						<input type='text' disabled='true' class='todo' style="width:300px;" placeholder='{{todotext}}'/>
 					</div>
-				
-					
-					
-					<div  class='list-group-item clearfix' ng-repeat='todo in todos |filter:statusFilter track by $index' >
+				<ul dnd-list="todos">
+					<li class='list-group-item clearfix' ng-repeat='todo in todos' dnd-draggable="todo"  dnd-moved="todos.splice($index, 1)" dnd-effect-allowed="move">
 						<span>
 						<input  class='toggle' type="checkbox" ng-model="todo.done"/>
-						<span>
+						</span>
 						<label id="sp"contenteditable="true"  style="width:180px;">{{todo.text}}</label>
 						<span class='pull-right'>
-							<a href="" ng-click="moveupdown($index-1)"><span class='glyphicon glyphicon-arrow-up'></span></a>
-							<a href="" ng-click="moveupdown($index)"><span class='glyphicon glyphicon-arrow-down'></span></a>
-						
 							<a href="" ng-click="removeTodo(todo)"><span class='glyphicon glyphicon-remove-circle'></span></a>
 						</span>
-					</div>
-				
+					</li>
+					</ul>
 				</div>
-					<footer id="footer" ng-show="todos.length" style"width:500px;">
-								<ul class="nav nav-tabs nav-justified btn-primary red" role="tablist">
-									<li>
-										<a class="geyish" ng-class="{selected: status == ''} " href="#/">All</a>
-									</li>
-									<li>
-										<a class="geyish"  ng-class="{selected: status == 'active'}" href="#/active">Incomplete</a>
-									</li>
-									<li>
-										<a class="geyish"  ng-class="{selected: status == 'completed'}" href="#/completed">Complete</a>
-									</li>
-								</ul>
-					</footer>
+				<footer id="footer" ng-show="todos.length" style"width:500px;">
+					<ul class="nav nav-tabs nav-justified btn-primary red" role="tablist">
+						<li>
+							<a class="geyish" ng-class="{selected: status == ''} " href="#/">All</a>
+							</li>
+							<li>
+								<a class="geyish"  ng-class="{selected: status == 'active'}" href="#/active">Incomplete</a>
+							</li>
+							<li>
+								<a class="geyish"  ng-class="{selected: status == 'completed'}" href="#/completed">Complete</a>
+							</li>
+						</ul>
+				</footer>
 			</div></div>
 	<div class='center'>
 	<div id="wish"  style="font-weight:bold">
