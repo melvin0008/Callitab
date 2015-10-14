@@ -1,6 +1,7 @@
 # Callitab
 
-All the basic features combined into one app.
+All the basic features combined into one app.   
+Download from [chrome store](https://chrome.google.com/webstore/detail/callitab/cbfcakedbnnbmhdplicoedllkhcobimg?hl=en-US).
 
 Features:    
 - [x] Todo functionality with drag and drop todo elements
