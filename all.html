@@ -47,11 +47,10 @@
 						<input type='text' disabled='true' class='todo' style="width:300px;" placeholder='{{todotext}}'/>
 					</div>
 				<ul dnd-list="todos">
-					<li class='list-group-item clearfix' ng-repeat='todo in todos' dnd-draggable="todo"  dnd-moved="todos.splice($index, 1)" dnd-effect-allowed="move">
-						<span>
-						<input  class='toggle' type="checkbox" ng-model="todo.done"/>
-						</span>
-						<label id="sp"contenteditable="true"  style="width:180px;">{{todo.text}}</label>
+					<li class=' checkbox list-group-item clearfix' ng-repeat='todo in todos | filter:statusFilter' dnd-draggable="todo"  dnd-moved="todos.splice($index, 1)" dnd-effect-allowed="move">
+
+						<input id="checkbox+{{$index}}" class='toggle checkbox-primary' type="checkbox" ng-model="todo.done" style="margin-left:5px;"/>
+						<label for="checkbox+{{$index}}" id="sp" style="width:180px;">{{todo.text}}</label>
 						<span class='pull-right'>
 							<a href="" ng-click="removeTodo(todo)"><span class='glyphicon glyphicon-remove-circle'></span></a>
 						</span>

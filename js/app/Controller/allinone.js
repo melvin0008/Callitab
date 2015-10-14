@@ -46,10 +46,14 @@ $(document).ready(function() {
 
 	$scope.$on('$routeChangeSuccess', function () {
 
-		var status = $scope.status = $routeParams.status || '';
-		$scope.statusFilter = (status === 'active') ?
-		{ done: false } : (status === 'completed') ?
-		{ done: true } : null;
+		if($routeParams.status==='active' || $routeParams.status==='completed')
+		{
+			var status = $scope.status = $routeParams.status || '';
+			$scope.statusFilter = (status === 'active') ?
+			{ done: false } : (status === 'completed') ?
+			{ done: true } : null;
+			console.log("Illappo");
+		}
 	});
 	$scope.$on('$destroy', function(){
 		$timeout.cancel(promise);
